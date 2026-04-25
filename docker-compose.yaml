@@ -1,7 +1,7 @@
 services:
   # 1. Database 서비스 (MySQL)
   service-board-mysql:
-    image: csjin21c/mysql:8.0-board-v1
+    image: csjin21c/mysql:8.4-board
     container_name: mysql-primary-container
     restart: unless-stopped # always(도커 엔진이 시작되면 컨테이너 재시작), unless-stopped(임의 정지시킨 컨테이너는 재시작에서 제외)
     environment:
@@ -17,7 +17,7 @@ services:
 
   # 2. Application 서비스 (FastAPI)
   service-board-fastapi:
-    image: csjin21c/fastapi:board-proxy-v1
+    image: csjin21c/fastapi:board-proxy
     container_name: board-fastapi-container
     restart: always
     depends_on:
@@ -35,7 +35,7 @@ services:
 
   # 3. Web 서비스 (Nginx)
   service-board-nginx:
-    image: csjin21c/nginx:1.29.7-board-proxy-v1
+    image: csjin21c/nginx:1.29.7-board-proxy
     container_name: board-nginx-container
     restart: always
     depends_on:
