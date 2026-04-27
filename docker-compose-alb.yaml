@@ -9,15 +9,15 @@ services:
     networks:
       - board-network
 
-  # # docker-install (Nginx)
-  # service-docker-install:
-  #   image: csjin21c/nginx:1.29.7-docker-install
-  #   container_name: docker-install-nginx-container
-  #   restart: always
-  #   ports:
-  #     - "8081:80"
-  #   networks:
-  #     - board-network
+  # docker-install (Nginx)
+  service-docker-install:
+    image: csjin21c/nginx:1.29.7-docker-install
+    container_name: docker-install-nginx-container
+    restart: always
+    ports:
+      - "8081:80"
+    networks:
+      - board-network
 
   # # docker-command (Nginx)
   # service-docker-command:
