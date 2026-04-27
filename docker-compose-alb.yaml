@@ -60,7 +60,7 @@ services:
       - board-network
 
   # docker-fastapi
-  service-docker-swarm:
+  service-docker-fastapi:
     image: csjin21c/fastapi:alb-path
     container_name: docker-fastapi-alb-path-container
     restart: always
